@@ -1,0 +1,32 @@
+// app/page.tsx
+import { Button } from "@/components/ui/button"
+
+export default function Home() {
+  return (
+    <main className="p-8 space-y-16">
+      <section className="text-center">
+        <h1 className="text-5xl font-bold">Tessarion-Tsc</h1>
+        <p className="mt-4 text-xl">AI + Education meets Intelligent Capital</p>
+        <div className="mt-6 flex justify-center gap-4">
+          <Button>Get Started</Button>
+          <Button variant="outline">Explore Demo</Button>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Platform Highlights</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="p-4 rounded-xl shadow bg-white">📈 Live Dashboard</div>
+          <div className="p-4 rounded-xl shadow bg-white">🤖 AI Allocation</div>
+          <div className="p-4 rounded-xl shadow bg-white">🎓 Education</div>
+          <div className="p-4 rounded-xl shadow bg-white">🔐 Security</div>
+        </div>
+      </section>
+
+      <section className="text-center py-10">
+        <h3 className="text-xl mb-2">Ready to explore intelligent investing?</h3>
+        <Button>Join Now</Button>
+      </section>
+    </main>
+  );
+}
