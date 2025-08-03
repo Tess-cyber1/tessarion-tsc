@@ -1,0 +1,15 @@
+export default function Home() {
+  return (
+    <main className="p-6">
+      <section className="text-center py-10">
+        <h1 className="text-4xl font-bold">Tessarion-Tsc</h1>
+        <p className="mt-4 text-lg">AI + Education meets Intelligent Capital</p>
+        <div className="mt-6 flex justify-center gap-4">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded-xl">Get Started</button>
+          <button className="border px-4 py-2 rounded-xl">Explore Demo</button>
+        </div>
+      </section>
+      {/* Add Vision, Highlights, CTA Footer */}
+    </main>
+  );
+}
