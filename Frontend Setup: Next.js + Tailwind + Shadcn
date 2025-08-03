@@ -2,3 +2,37 @@ npx create-next-app@latest .
 # Choose TypeScript
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
+
+Update tailwind.config.js:
+
+content: [
+  "./app/**/*.{js,ts,jsx,tsx}",
+  "./components/**/*.{js,ts,jsx,tsx}"
+],
+
+Install Shadcn UI:
+
+npx shadcn-ui@latest init
+
+Backend Setup (FastAPI)
+
+Create a /backend folder:
+
+mkdir backend && cd backend
+python -m venv env
+source env/bin/activate
+pip install fastapi uvicorn numpy pandas scikit-learn
+
+Add main.py in /backend:
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/api/allocate")
+def allocate():
+    return {"status": "AI allocation triggered"}
+
+Run the backend:
+
+uvicorn main:app --reload
