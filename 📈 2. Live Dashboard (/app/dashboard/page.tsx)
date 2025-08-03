@@ -1,0 +1,60 @@
+"use client"
+import { LineChart, Line, PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts"
+
+const pieData = [
+  { name: 'Stocks', value: 50 },
+  { name: 'Crypto', value: 20 },
+  { name: 'Bonds', value: 30 },
+]
+
+const COLORS = ['#00BFFF', '#FF8042', '#00C49F']
+
+const lineData = [
+  { date: 'Week 1', value: 10000 },
+  { date: 'Week 2', value: 10500 },
+  { date: 'Week 3', value: 9800 },
+  { date: 'Week 4', value: 11500 },
+]
+
+export default function Dashboard() {
+  return (
+    <div className="p-6 space-y-12">
+      <h1 className="text-3xl font-bold">Live Investment Dashboard</h1>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white p-4 rounded-xl shadow">
+          <h2 className="text-lg font-semibold">Portfolio Value Over Time</h2>
+          <ResponsiveContainer width="100%" height={200}>
+            <LineChart data={lineData}>
+              <Line type="monotone" dataKey="value" stroke="#00BFFF" />
+              <Tooltip />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className="bg-white p-4 rounded-xl shadow">
+          <h2 className="text-lg font-semibold">Asset Allocation</h2>
+          <ResponsiveContainer width="100%" height={200}>
+            <PieChart>
+              <Pie data={pieData} dataKey="value" outerRadius={80} label>
+                {pieData.map((_, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+      </section>
+
+      <div className="text-center">
+        <button
+          onClick={() => fetch("/api/allocate")}
+          className="bg-blue-600 text-white px-4 py-2 rounded-xl"
+        >
+          Enable AI Strategy
+        </button>
+      </div>
+    </div>
+  )
+}
