@@ -1,0 +1,31 @@
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Replace with Vercel frontend URL
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/api/allocate")
+def ping():
+    return {"message": "Allocation endpoint ready."}
+
+@app.post("/api/allocate")
+async def allocate(request: Request):
+    data = await request.json()
+    capital = data.get("capital", 0)
+    # Simple AI logic (mock)
+    allocation = {
+        "Stocks": round(capital * 0.5, 2),
+        "Crypto": round(capital * 0.3, 2),
+        "Bonds": round(capital * 0.2, 2),
+    }
+    return {
+        "capital": capital,
+        "allocation": allocation,
+        "summary": f"AI recommends 50% Stocks, 30% Crypto, 20% Bonds for ${capital} capital"
+    }
