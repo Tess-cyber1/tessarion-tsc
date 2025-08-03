@@ -1,0 +1,19 @@
+tessarion-tsc-platform/
+├── app/               # Next.js routes
+│   ├── page.tsx       # Homepage
+│   ├── dashboard/     
+│   ├── ai-engine/
+│   ├── auth/
+│   ├── learn/
+│   ├── whitepaper/
+│   ├── investors/
+│   ├── news/
+│   ├── contact/
+│   └── terms/, privacy/, security/
+├── components/        # Reusable UI components
+├── backend/           # FastAPI AI backend
+├── public/
+├── styles/
+├── README.md
+├── .gitignore
+└── package.json
