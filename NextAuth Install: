@@ -1,0 +1,9 @@
+npm install next-auth
+
+Create /app/api/auth/[...nextauth]/route.ts with Google/LinkedIn or email provider.
+
+Configure .env.local:
+
+NEXTAUTH_SECRET=your_secret
+GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
