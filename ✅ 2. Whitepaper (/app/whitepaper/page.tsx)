@@ -1,0 +1,25 @@
+// app/whitepaper/page.tsx
+export default function Whitepaper() {
+  return (
+    <div className="p-6 space-y-4">
+      <h1 className="text-3xl font-bold">Platform Whitepaper</h1>
+      <p className="text-gray-600">Explore our technical, educational, and financial framework.</p>
+
+      <ul className="list-disc ml-6 space-y-1">
+        <li>📌 Problem & Market Gap</li>
+        <li>🧠 AI Allocation Model</li>
+        <li>🔐 Security Architecture</li>
+        <li>🎓 Educational Value</li>
+        <li>🚀 Roadmap & Tokenomics</li>
+      </ul>
+
+      <a
+        href="/docs/tessarion-whitepaper.pdf"
+        target="_blank"
+        className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-xl"
+      >
+        Download Full Whitepaper (PDF)
+      </a>
+    </div>
+  )
+}
