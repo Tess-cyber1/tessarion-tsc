@@ -1,0 +1,43 @@
+"use client"
+import { useState } from "react"
+
+export default function AIEngine() {
+  const [capital, setCapital] = useState("")
+  const [result, setResult] = useState<any>(null)
+
+  const handleSubmit = async () => {
+    const res = await fetch("/api/allocate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ capital: parseFloat(capital) }),
+    })
+    const data = await res.json()
+    setResult(data)
+  }
+
+  return (
+    <div className="p-6 space-y-6">
+      <h1 className="text-3xl font-bold">AI Allocation Engine</h1>
+
+      <div className="space-y-2">
+        <label>Investment Capital (USD)</label>
+        <input
+          type="number"
+          value={capital}
+          onChange={(e) => setCapital(e.target.value)}
+          className="border p-2 rounded w-full"
+        />
+        <button onClick={handleSubmit} className="mt-2 bg-blue-600 text-white px-4 py-2 rounded-xl">
+          Run AI Model
+        </button>
+      </div>
+
+      {result && (
+        <div className="mt-6 bg-gray-50 p-4 rounded-xl">
+          <h2 className="font-semibold mb-2">AI Allocation Plan:</h2>
+          <pre>{JSON.stringify(result, null, 2)}</pre>
+        </div>
+      )}
+    </div>
+  )
+}
