@@ -1,0 +1,23 @@
+// app/investors/page.tsx
+export default function Investors() {
+  return (
+    <div className="p-6 space-y-6">
+      <h1 className="text-3xl font-bold">Investor Relations</h1>
+      <p className="text-gray-600">Built for institutions, angels, and forward-looking VCs.</p>
+
+      <div className="space-y-4">
+        <h2 className="text-xl font-semibold">📈 Metrics & Growth</h2>
+        <p>• 10K+ users in pilot phase<br />• Real-time AI optimization tested on $1.2M capital<br />• SOC2-compliant backend</p>
+
+        <h2 className="text-xl font-semibold">📄 Investor Deck</h2>
+        <a href="/docs/investor-pitch.pdf" className="text-blue-600 underline">Download Pitch Deck (PDF)</a>
+
+        <h2 className="text-xl font-semibold">📞 Meet the Team</h2>
+        <p>CTO, CEO, AI Lead, Education Director — see full bios in whitepaper.</p>
+
+        <h2 className="text-xl font-semibold">📆 Schedule a Call</h2>
+        <a href="https://calendly.com/your-tessarion-link" className="text-blue-600 underline">Book via Calendly</a>
+      </div>
+    </div>
+  )
+}
