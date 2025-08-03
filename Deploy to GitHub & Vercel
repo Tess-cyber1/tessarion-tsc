@@ -1,0 +1,13 @@
+1. Push to GitHub
+
+git add .
+git commit -m "Initial commit with homepage and backend"
+git push origin main
+
+2. Deploy Frontend to Vercel
+
+Go to https://vercel.com
+
+Connect GitHub → Select tessarion-tsc-platform
+
+Follow prompts to deploy frontend
