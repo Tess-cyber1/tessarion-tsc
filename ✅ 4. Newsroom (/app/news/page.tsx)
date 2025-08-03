@@ -1,0 +1,24 @@
+// app/news/page.tsx
+const news = [
+  { date: "2025-08-01", title: "AI Engine Beta Launch 🚀" },
+  { date: "2025-07-25", title: "Signed Partnership with FinSmart EduTech" },
+  { date: "2025-07-10", title: "Investor Webinar: Portfolio Strategies" },
+]
+
+export default function News() {
+  return (
+    <div className="p-6 space-y-6">
+      <h1 className="text-3xl font-bold">Newsroom</h1>
+      <p className="text-gray-600">Stay up to date with product, investing, and learning updates.</p>
+
+      <ul className="space-y-3">
+        {news.map((n, i) => (
+          <li key={i} className="bg-white p-4 rounded-xl shadow">
+            <span className="block text-sm text-gray-400">{n.date}</span>
+            <h2 className="text-lg font-semibold">{n.title}</h2>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
